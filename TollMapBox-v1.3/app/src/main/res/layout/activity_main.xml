@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        mapbox:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintHorizontal_bias="0.0"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent"
+        mapbox:mapbox_cameraTargetLat="37.7749"
+        mapbox:mapbox_cameraTargetLng="-122.4194"
+        mapbox:mapbox_cameraZoom="12">
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_location_source"
+        android:layout_width="wrap_content"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:layout_gravity="start|fill|end"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="false"
+        android:padding="@dimen/fab_feedback_margin_top"
+        android:src="@android:drawable/ic_search_category_default"
+        mapbox:backgroundTint="@color/mapbox_navigation_route_upcoming_maneuver_arrow_border_color"
+        mapbox:fabSize="mini"
+        mapbox:layout_constraintBottom_toBottomOf="@+id/search_text"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintHorizontal_bias="0.0"
+        mapbox:layout_constraintStart_toStartOf="@+id/search_text"
+        mapbox:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/search_text"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:enabled="true"
+        android:text="@string/search_box_instructions"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:typeface="normal"
+        android:visibility="visible"
+        mapbox:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent"
+        mapbox:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        mapbox:layout_constraintBottom_toBottomOf="parent"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintHorizontal_bias="0.0"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent"
+        mapbox:layout_constraintVertical_bias="1.0">
+
+        <CheckBox
+            android:id="@+id/toll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/toll1"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toStartOf="@+id/toll2"
+            mapbox:layout_constraintStart_toStartOf="parent"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <CheckBox
+            android:id="@+id/toll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/toll2"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toStartOf="@+id/toll3"
+            mapbox:layout_constraintHorizontal_bias="0.5"
+            mapbox:layout_constraintStart_toEndOf="@+id/toll1"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <CheckBox
+            android:id="@+id/toll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/toll3"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toStartOf="@+id/toll4"
+            mapbox:layout_constraintHorizontal_bias="0.5"
+            mapbox:layout_constraintStart_toEndOf="@+id/toll2"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <CheckBox
+            android:id="@+id/toll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/toll4"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toStartOf="@+id/pay_button"
+            mapbox:layout_constraintHorizontal_bias="0.5"
+            mapbox:layout_constraintStart_toEndOf="@+id/toll3"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <Button
+            android:id="@+id/pay_button"
+            style="@android:style/Widget.Material.Light.Button.Inset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="false"
+            android:background="@color/mapbox_plugins_bright_blue"
+            android:backgroundTint="@color/mapbox_navigation_view_color_secondary_dark"
+            android:backgroundTintMode="multiply"
+            android:elevation="0dp"
+            android:enabled="true"
+            android:text="@string/payBtn"
+            android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+            android:textColorHighlight="@color/mapbox_blue"
+            android:textColorLink="@color/colorAccent"
+            android:textSize="24sp"
+            android:visibility="visible"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toEndOf="parent"
+            mapbox:layout_constraintStart_toEndOf="@+id/toll4"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

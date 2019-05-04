@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Toll-MapBox-Test</string>
+    <string name="api_key">
+        pk.eyJ1IjoiamFrZWhhbGwyMCIsImEiOiJjanNjYjN0bzkwMWRhNGF0M3EyMGd2c2gyIn0.YKNyc3Ja5BLsQO7SdLiCtQ
+    </string>
+    <string name="tap_on_map_instruction">Hello</string>
+</resources>
+
